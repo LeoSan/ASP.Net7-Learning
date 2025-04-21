@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5CC6DA6-ACD7-43E1-B99F-01336FC20425}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompInspeccion</RootNamespace>
+    <AssemblyName>CompInspeccion</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage|AnyCPU'">
+    <OutputPath>bin\Stage\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownCheckBoxes, Version=1.1.0.31568, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DropDownCheckBoxes.1.1.0.31568\lib\DropDownCheckBoxes.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.2\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Agregar.cs" />
+    <Compile Include="Clases\Catalogos.cs" />
+    <Compile Include="Clases\Eliminar.cs" />
+    <Compile Include="Clases\Constantes.cs" />
+    <Compile Include="Clases\Consultas.cs" />
+    <Compile Include="Clases\Paginador.cs" />
+    <Compile Include="Clases\SQLConnectionManager.cs" />
+    <Compile Include="ComponentInsp.cs" />
+    <Compile Include="DtoS\Apis\DtoProcesosOffline.cs" />
+    <Compile Include="DtoS\Apis\DtoSIPAS.cs" />
+    <Compile Include="DtoS\DtoBusquedaRegistroActividad.cs" />
+    <Compile Include="DtoS\DtoBusquedaPAS.cs" />
+    <Compile Include="DtoS\DtoCentro.cs" />
+    <Compile Include="DtoS\DtoCentroCamara.cs" />
+    <Compile Include="DtoS\DtoCentroInformacion.cs" />
+    <Compile Include="DtoS\DtoCentroMovimiento.cs" />
+    <Compile Include="DtoS\DtoCentroSindicato.cs" />
+    <Compile Include="DtoS\DtoColectivoInspecciones.cs" />
+    <Compile Include="DtoS\DtoConfiguracion.cs" />
+    <Compile Include="DtoS\DtoConteoInspecciones.cs" />
+    <Compile Include="DtoS\DtoCopias.cs" />
+    <Compile Include="DtoS\DtoCT.cs" />
+    <Compile Include="DtoS\DtoDashboard.cs" />
+    <Compile Include="DtoS\DtoDshgoMedidaPrecautoriaConsulta.cs" />
+    <Compile Include="DtoS\DtoDshgoListadoPersonalActivo.cs" />
+    <Compile Include="DtoS\DtoDshgoPregunta.cs" />
+    <Compile Include="DtoS\DtoDshgoRespuesta.cs" />
+    <Compile Include="DtoS\DtoEmplazamientoNumeral.cs" />
+    <Compile Include="DtoS\DtoEmpresaMovimiento.cs" />
+    <Compile Include="DtoS\DtoFactor.cs" />
+    <Compile Include="DtoS\DtoFirmaDigital.cs" />
+    <Compile Include="DtoS\DtoFirmantesDoc.cs" />
+    <Compile Include="DtoS\DtoInfoMetadato.cs" />
+    <Compile Include="DtoS\DtoInspeccionDetalle.cs" />
+    <Compile Include="DtoS\DtoInspectorInfoAdmin.cs" />
+    <Compile Include="DtoS\DtoMateriaGrupo.cs" />
+    <Compile Include="DtoS\DtoNotifSancionador.cs" />
+    <Compile Include="DtoS\DtoPlantillaVersion.cs" />
+    <Compile Include="DtoS\DtoRamasIndustriales.cs" />
+    <Compile Include="DtoS\DtoReprogramacion.cs" />
+    <Compile Include="DtoS\DtoEmplazamiento.cs" />
+    <Compile Include="DtoS\DtoBusquedaAvanzada.cs" />
+    <Compile Include="DtoS\DtoCalif.cs" />
+    <Compile Include="DtoS\DtoCalifDoctoCopias.cs" />
+    <Compile Include="DtoS\DtoCalifDoctoVariables.cs" />
+    <Compile Include="DtoS\DtoCalifDocumento.cs" />
+    <Compile Include="DtoS\DtoCalificacion.cs" />
+    <Compile Include="DtoS\DtoCalifRequisitoRespuesta.cs" />
+    <Compile Include="DtoS\DtoCalifViolacion.cs" />
+    <Compile Include="DtoS\DtoDshgoRevision.cs" />
+    <Compile Include="DtoS\DtoDshgoCaptura.cs" />
+    <Compile Include="DtoS\DtoDshgoAlcance.cs" />
+    <Compile Include="DtoS\DtoDshgoArea.cs" />
+    <Compile Include="DtoS\DtoDshgoCentroCamara.cs" />
+    <Compile Include="DtoS\DtoDshgoCentroTrabajo.cs" />
+    <Compile Include="DtoS\DtoDshgoDoctoVariables.cs" />
+    <Compile Include="DtoS\DtoDshgoDocumento.cs" />
+    <Compile Include="DtoS\DtoDshgoDomicilioFiscal.cs" />
+    <Compile Include="DtoS\DtoDshgoExperto.cs" />
+    <Compile Include="DtoS\DtoDshgoInspector.cs" />
+    <Compile Include="DtoS\DtoDshgoInterrogado.cs" />
+    <Compile Include="DtoS\DtoDshgoInterrogatorio.cs" />
+    <Compile Include="DtoS\DtoDshgoInterrogatorioAbierta.cs" />
+    <Compile Include="DtoS\DtoDshgoMedDescatalogada.cs" />
+    <Compile Include="DtoS\DtoDshgoMedida.cs" />
+    <Compile Include="DtoS\DtoDshgoParticipantes.cs" />
+    <Compile Include="DtoS\DtoDshgoRepEmpresa.cs" />
+    <Compile Include="DtoS\DtoDshgoRepTrabajadores.cs" />
+    <Compile Include="DtoS\DtoDshgoRevisionInfo.cs" />
+    <Compile Include="DtoS\DtoDshgoSolidaria.cs" />
+    <Compile Include="DtoS\DtodshgoTablero.cs" />
+    <Compile Include="DtoS\DtoDesahogo.cs" />
+    <Compile Include="DtoS\DtoDoctoVariables.cs" />
+    <Compile Include="DtoS\DtoDshgo.cs" />
+    <Compile Include="DtoS\DtoDshgoMotivoInforme.cs" />
+    <Compile Include="DtoS\DtoDshgoTestigo.cs" />
+    <Compile Include="DtoS\DtoDshgoTrabajador.cs" />
+    <Compile Include="DtoS\DtoDshgoTrabajadorDetalle.cs" />
+    <Compile Include="DtoS\DtoInciso.cs" />
+    <Compile Include="DtoS\DtoIndicadores.cs" />
+    <Compile Include="DtoS\DtoIndMedida.cs" />
+    <Compile Include="DtoS\DtoIndMedidaPlazo.cs" />
+    <Compile Include="DtoS\DtoIndTema.cs" />
+    <Compile Include="DtoS\DtoIndTemaFrecuente.cs" />
+    <Compile Include="DtoS\DtoInfoAdicional.cs" />
+    <Compile Include="DtoS\DtoInspecCambioInspector.cs" />
+    <Compile Include="DtoS\DtoNotifOtraActuacion.cs" />
+    <Compile Include="DtoS\DtoNotifOtraActuacionBusqueda.cs" />
+    <Compile Include="DtoS\DtoSancion.cs" />
+    <Compile Include="DtoS\DtoSancionViolacion.cs" />
+    <Compile Include="DtoS\DtoSeccionesMateria.cs" />
+    <Compile Include="DtoS\DtoSeguimientoExpediente.cs" />
+    <Compile Include="DtoS\DtoSExpedienteEtapa.cs" />
+    <Compile Include="DtoS\DtoSNotifResultado.cs" />
+    <Compile Include="DtoS\DtoSubtipoMateria.cs" />
+    <Compile Include="DtoS\DtoTipoDocumento.cs" />
+    <Compile Include="DtoS\DtoBusqueda.cs" />
+    <Compile Include="DtoS\DtoDFT.cs" />
+    <Compile Include="DtoS\DtoDGIFT.cs" />
+    <Compile Include="DtoS\DtoDoctoBusqueda.cs" />
+    <Compile Include="DtoS\DtoBitacoraAccesos.cs" />
+    <Compile Include="DtoS\DtoDoctoParrafoMateria.cs" />
+    <Compile Include="DtoS\DtoDoctoParrafoSubtipo.cs" />
+    <Compile Include="DtoS\DtoDoctoParrafoTexto.cs" />
+    <Compile Include="DtoS\DtoDoctoParrafo.cs" />
+    <Compile Include="DtoS\DtoDoctoParrafoTipo.cs" />
+    <Compile Include="DtoS\DtoDoctoValores.cs" />
+    <Compile Include="DtoS\DtoDoctoVariable.cs" />
+    <Compile Include="DtoS\dtoDocumento.cs" />
+    <Compile Include="DtoS\DtoEmpresa.cs" />
+    <Compile Include="DtoS\DtoInfoApoyo.cs" />
+    <Compile Include="DtoS\DtoInspecAdicional.cs" />
+    <Compile Include="DtoS\DtoInspeccion.cs" />
+    <Compile Include="DtoS\DtoInspecParticipante.cs" />
+    <Compile Include="DtoS\DtoInspector.cs" />
+    <Compile Include="DtoS\DtoInspectorDisponibilidad.cs" />
+    <Compile Include="DtoS\DtoMaterias.cs" />
+    <Compile Include="DtoS\DtoModificacion.cs" />
+    <Compile Include="DtoS\DtoMotivosInspeccion.cs" />
+    <Compile Include="DtoS\dtoNotificacion.cs" />
+    <Compile Include="DtoS\DtoOperativo.cs" />
+    <Compile Include="DtoS\DtoOperativoAlcance.cs" />
+    <Compile Include="DtoS\DtoOperativoAsignacion.cs" />
+    <Compile Include="DtoS\DtoOperativoEntidad.cs" />
+    <Compile Include="DtoS\DtoOperativoIndicador.cs" />
+    <Compile Include="DtoS\DtoParticipante.cs" />
+    <Compile Include="DtoS\DtoProgAct.cs" />
+    <Compile Include="DtoS\DtoProgAnual.cs" />
+    <Compile Include="DtoS\DtoProgAtributo.cs" />
+    <Compile Include="DtoS\DtoProgEntidad.cs" />
+    <Compile Include="DtoS\DtoProgMateria.cs" />
+    <Compile Include="DtoS\DtoProgMes.cs" />
+    <Compile Include="DtoS\DtoSubmateria.cs" />
+    <Compile Include="DtoS\DtoUsuario.cs" />
+    <Compile Include="DtoS\NormatividadVersion.cs" />
+    <Compile Include="DtoS\SNotifRequerir.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\utilerias\Utilerias.csproj">
+      <Project>{4D303261-4E06-40F9-ABAC-3224B2BB8155}</Project>
+      <Name>Utilerias</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

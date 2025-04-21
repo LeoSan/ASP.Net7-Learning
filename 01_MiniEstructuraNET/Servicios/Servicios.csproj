@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8423928C-6CF5-49AC-A36C-B984F31D835D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Servicios</RootNamespace>
+    <AssemblyName>Servicios</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage|AnyCPU'">
+    <OutputPath>bin\Stage\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownCheckBoxes, Version=1.1.0.31568, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DropDownCheckBoxes.1.1.0.31568\lib\DropDownCheckBoxes.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.2\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlExpedientes\ConfiguracionExpedientes.cs" />
+    <Compile Include="ControlExpedientes\ServiciosExpedientes.cs" />
+    <Compile Include="ControlUsuarios\ConfiguracionBitacora.cs" />
+    <Compile Include="ControlUsuarios\ConfiguracionMailBox.cs" />
+    <Compile Include="ControlUsuarios\ServiciosBitacora.cs" />
+    <Compile Include="ControlUsuarios\ServiciosMailBox.cs" />
+    <Compile Include="DtoS\DtoBitacora.cs" />
+    <Compile Include="DtoS\DtoDocumentos.cs" />
+    <Compile Include="DtoS\DtoExpediente.cs" />
+    <Compile Include="DtoS\DtoFechas.cs" />
+    <Compile Include="DtoS\DtoMailBox.cs" />
+    <Compile Include="DtoS\DtoSolicitudSancion.cs" />
+    <Compile Include="Generales\ObtenerMedidasDesahogo.cs" />
+    <Compile Include="MotorDisponibilidad\ConfiguracionEventos.cs" />
+    <Compile Include="MotorDisponibilidad\ServiciosEventos.cs" />
+    <Compile Include="ControlUsuarios\ConfiguracionUsuarios.cs" />
+    <Compile Include="ControlUsuarios\ServiciosUsuarios.cs" />
+    <Compile Include="DtoS\DtoConfig.cs" />
+    <Compile Include="DtoS\DtoEvento.cs" />
+    <Compile Include="DtoS\DtoToken.cs" />
+    <Compile Include="DtoS\DtoUsuario.cs" />
+    <Compile Include="Generales\ConfiguracionServicios.cs" />
+    <Compile Include="Generales\ConfiguracionToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SIPAS3\Configuracion.cs" />
+    <Compile Include="SIPAS3\ServiciosSolicitudes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompInspeccion\CompInspeccion.csproj">
+      <Project>{f5cc6da6-acd7-43e1-b99f-01336fc20425}</Project>
+      <Name>CompInspeccion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
